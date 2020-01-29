@@ -47,7 +47,11 @@ $(document).ready(
         for (var key in ListaStudenti[i]) {
 
             if (ListaStudenti[i][key] == ricerca) {
-              console.log("n");
+              var source = $("#entry-template").html();
+              var template = Handlebars.compile(source);
+              var context = ListaStudenti[i];
+              var html = template(context);
+              $("ul").append(html);
             }
             else {
               // console.log("random");
