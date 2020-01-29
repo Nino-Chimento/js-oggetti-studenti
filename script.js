@@ -25,15 +25,23 @@ $(document).ready(
         "eta" : 32,
         "sesso": "m"
       },
-      // {
-      //   "nome": prompt("inserisci il tuo nome"),
-      //   "cognome": prompt("inserisci il tuo cognome"),
-      //   "eta":parseInt(prompt("inserisci la tua eta")),
-      //   "sesso": prompt("inserisci il tuo sesso")
-      // }
+      {
+        "nome": prompt("inserisci il tuo nome"),
+        "cognome": prompt("inserisci il tuo cognome"),
+        "eta":parseInt(prompt("inserisci la tua eta")),
+        "sesso": prompt("inserisci il tuo sesso")
+      }
     ]
-    for (var i = 0; i < ListaStudenti.length; i++) {
-      console.log(ListaStudenti[i].nome,ListaStudenti[i].cognome);
-    }
+    $("button").click(function () {
+      for (var i = 0; i < ListaStudenti.length; i++) {
+        var source = $("#entry-template").html();
+        var template = Handlebars.compile(source);
+        var context = ListaStudenti[i];
+        var html = template(context);
+        $("ul").append(html);
+      }
+
+
+    })
   }
 );
