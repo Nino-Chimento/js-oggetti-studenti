@@ -29,7 +29,7 @@ $(document).ready(
         "nome": prompt("inserisci il tuo nome"),
         "cognome": prompt("inserisci il tuo cognome"),
         "eta":parseInt(prompt("inserisci la tua eta")),
-        "sesso": prompt("inserisci il tuo sesso")
+        "sesso": prompt("inserisci il tuo sesso tra m o f")
       }
     ]
     $("button").click(function () {
