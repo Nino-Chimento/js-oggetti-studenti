@@ -24,6 +24,12 @@ $(document).ready(
         "cognome": "bianchi",
         "eta" : 32,
         "sesso": "m"
+      },
+      {
+        "nome": prompt("inserisci il tuo nome"),
+        "cognome": prompt("inserisci il tuo cognome"),
+        "eta":parseInt(prompt("inserisci la tua eta")),
+        "sesso": prompt("inserisci il tuo sesso")
       }
     ]
     for (var i = 0; i < ListaStudenti.length; i++) {
