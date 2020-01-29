@@ -33,6 +33,7 @@ $(document).ready(
       // }
     ]
     $("button").click(function () {
+      $("ul li").remove();
       for (var i = 0; i < listaStudenti.length; i++) {
         var source = $("#entry-template").html();
         var template = Handlebars.compile(source);
