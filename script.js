@@ -25,12 +25,12 @@ $(document).ready(
         "eta" : 32,
         "sesso": "m"
       },
-      // {
-      //   "nome": prompt("inserisci il tuo nome"),
-      //   "cognome": prompt("inserisci il tuo cognome"),
-      //   "eta":parseInt(prompt("inserisci la tua eta")),
-      //   "sesso": prompt("inserisci il tuo sesso tra m o f")
-      // }
+      {
+        "nome": prompt("inserisci il tuo nome"),
+        "cognome": prompt("inserisci il tuo cognome"),
+        "eta":parseInt(prompt("inserisci la tua eta")),
+        "sesso": prompt("inserisci il tuo sesso tra m o f")
+      }
     ]
     $("button").click(function () {
       $("ul li").remove();
@@ -46,17 +46,13 @@ $(document).ready(
       var ricerca = $("input").val();
       for (var i = 0; i < listaStudenti.length; i++) {
         for (var key in listaStudenti[i]) {
-
-            if (listaStudenti[i][key] == ricerca) {
+            if (listaStudenti[i].nome.includes(ricerca)) {
               $("ul li").remove();
               var source = $("#entry-template").html();
               var template = Handlebars.compile(source);
               var context = listaStudenti[i];
               var html = template(context);
               $("ul").append(html);
-            }
-            else {
-              // console.log("random");
             }
         }
       }
