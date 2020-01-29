@@ -1,30 +1,33 @@
 $(document).ready(
   function () {
     var studente = {
-      "none" : "nino",
+      "nome" : "nino",
       "cognome": "chimento",
       "eta" : 35,
       "sesso": "m"
-    }
+    };
     var ListaStudenti = [
       {
-        "none" : "nino",
+        "nome" : "nino",
         "cognome": "chimento",
         "eta" : 35,
         "sesso": "m"
-      }
+      },
       {
-        "none" : "marzia",
+        "nome" : "marzia",
         "cognome": "rossi",
         "eta" : 30,
         "sesso": "f"
       },
       {
-        "none" : "marco",
+        "nome" : "marco",
         "cognome": "bianchi",
         "eta" : 32,
         "sesso": "m"
       }
     ]
+    for (var i = 0; i < ListaStudenti.length; i++) {
+      console.log(ListaStudenti[i].nome,ListaStudenti[i].cognome);
+    }
   }
 );
