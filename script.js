@@ -42,7 +42,18 @@ $(document).ready(
       }
     });
     $("input").keyup(function () {
-      console.log("ni");
+      var ricerca = $("input").val();
+      for (var i = 0; i < ListaStudenti.length; i++) {
+        for (var key in ListaStudenti[i]) {
+
+            if (ListaStudenti[i][key] == ricerca) {
+              console.log("n");
+            }
+            else {
+              // console.log("random");
+            }
+        }
+      }
     })
   }
 );
