@@ -6,7 +6,7 @@ $(document).ready(
       "eta" : 35,
       "sesso": "m"
     };
-    var ListaStudenti = [
+    var listaStudenti = [
       {
         "nome" : "nino",
         "cognome": "chimento",
@@ -20,7 +20,7 @@ $(document).ready(
         "sesso": "f"
       },
       {
-        "nome" : "marco",
+        "nome" : "giuseppe",
         "cognome": "bianchi",
         "eta" : 32,
         "sesso": "m"
@@ -33,23 +33,24 @@ $(document).ready(
       // }
     ]
     $("button").click(function () {
-      for (var i = 0; i < ListaStudenti.length; i++) {
+      for (var i = 0; i < listaStudenti.length; i++) {
         var source = $("#entry-template").html();
         var template = Handlebars.compile(source);
-        var context = ListaStudenti[i];
+        var context = listaStudenti[i];
         var html = template(context);
         $("ul").append(html);
       }
     });
     $("input").keyup(function () {
       var ricerca = $("input").val();
-      for (var i = 0; i < ListaStudenti.length; i++) {
-        for (var key in ListaStudenti[i]) {
+      for (var i = 0; i < listaStudenti.length; i++) {
+        for (var key in listaStudenti[i]) {
 
-            if (ListaStudenti[i][key] == ricerca) {
+            if (listaStudenti[i][key] == ricerca) {
+              $("ul li").remove();
               var source = $("#entry-template").html();
               var template = Handlebars.compile(source);
-              var context = ListaStudenti[i];
+              var context = listaStudenti[i];
               var html = template(context);
               $("ul").append(html);
             }
