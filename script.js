@@ -25,12 +25,12 @@ $(document).ready(
         "eta" : 32,
         "sesso": "m"
       },
-      {
-        "nome": prompt("inserisci il tuo nome"),
-        "cognome": prompt("inserisci il tuo cognome"),
-        "eta":parseInt(prompt("inserisci la tua eta")),
-        "sesso": prompt("inserisci il tuo sesso tra m o f")
-      }
+      // {
+      //   "nome": prompt("inserisci il tuo nome"),
+      //   "cognome": prompt("inserisci il tuo cognome"),
+      //   "eta":parseInt(prompt("inserisci la tua eta")),
+      //   "sesso": prompt("inserisci il tuo sesso tra m o f")
+      // }
     ]
     $("button").click(function () {
       for (var i = 0; i < ListaStudenti.length; i++) {
@@ -40,8 +40,9 @@ $(document).ready(
         var html = template(context);
         $("ul").append(html);
       }
-
-
+    });
+    $("input").keyup(function () {
+      console.log("ni");
     })
   }
 );
